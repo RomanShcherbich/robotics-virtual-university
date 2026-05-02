@@ -2,50 +2,46 @@
 
 ## Cursor Cloud specific instructions
 
-This repository (`robotics-virtual-university`) is a self-learning robotics project using AI agents as teachers and coordinators.
+This repository (`robotics-virtual-university`) is a self-learning robotics project. AI agents act as **teachers and coordinators**. The goal is to become a Junior Robotics Simulation Engineer / Robotics Software Engineer.
+
+### Learning rules (must follow)
+
+1. **Practice first** — every concept is learned through hands-on tasks
+2. **Every lesson creates an artifact** — code, config, launch file, or recording
+3. **No moving forward without understanding** — verify comprehension before next lesson
+4. **Use `sources/` as working knowledge** — structured source files, not link dumps
+5. **Use `prompts/` as reusable AI workflows** — templates for learning interactions
+
+### Core stack
+
+Ubuntu 24.04, ROS 2 Jazzy, Gazebo Harmonic, Webots, URDF/xacro, SDF, ros2_control, Nav2, OpenCV, rosbag2/MCAP, Arduino.
 
 ### Project structure
 
 ```
-sources/           ← Knowledge system (NOT a link list — structured working sources)
-  core/            ← Core stack overview (stack.md, ros2.md)
-  ros2/            ← ROS2 concepts (nodes, topics, services, actions, launch, tf2)
-  simulation/      ← Simulators (gazebo, webots, urdf)
-  navigation/      ← Navigation & SLAM (nav2, slam)
-  vision/          ← Computer vision (opencv, depth_cameras)
-  hardware/        ← Hardware control (ros2_control, sensors)
-  advanced/        ← Advanced topics (behavior_trees, moveit, foxglove, mcap)
+README.md               ← Project overview, goals, rules
+sources/                ← Knowledge source system (structured, not just links)
+  core/                 ← Core stack overview (stack.md, ros2.md)
+  ros2/                 ← ROS2 concepts (nodes, topics, services, actions, launch, tf2)
+  simulation/           ← Simulators (gazebo, webots, urdf)
+  navigation/           ← Nav2, SLAM
+  vision/               ← OpenCV, depth cameras
+  hardware/             ← ros2_control, sensors
+  advanced/             ← Behavior trees, MoveIt, Foxglove, MCAP
+prompts/                ← Reusable AI prompt templates
+  learn/                ← Explain/compare/deep-dive workflows
+  debug/                ← Fix-error/diagnose workflows
+  review/               ← Check-understanding/code-review workflows
+  create/               ← Generate ROS2 nodes/launch files
 ```
 
 ### Source file format
 
-Each source file is a **working tool**, not just a link. It follows the format:
-- **Link** — URL to official docs
-- **What it is** — brief description
-- **When to use** — specific use cases
-- **Key sections** — important parts to read
-- **Questions** — open questions for learning
-- **My notes** — personal conclusions (filled during learning)
-
-### Key principle
-
-Sources are integrated with lessons. Each lesson should reference its sources:
-```md
-## Sources
-- sources/ros2/nodes.md
-- sources/core/stack.md
-```
-
-### Technology stack (planned)
-
-- Python 3.12
-- ROS2, Gazebo, Nav2, ros2_control
-- OpenCV for vision
-- Foxglove/MCAP for visualization and data recording
-- The `.gitignore` covers Django, Flask, Celery, Redis, Jupyter, Streamlit, Marimo patterns
+Each source file follows: Link → What it is → When to use → Key sections → Questions → My notes.
 
 ### For future agents
 
-- No runnable application exists yet — this is a knowledge/curriculum project.
-- When source code is added, check for `pyproject.toml`, `requirements.txt`, or similar dependency manifests.
-- AI agents act as **teachers**: use source files in prompts to teach specific topics.
+- No runnable application exists yet — curriculum/knowledge project.
+- When source code is added, check for `pyproject.toml`, `requirements.txt`, or similar.
+- Each lesson should reference its sources and produce an artifact.
+- Use prompt templates from `prompts/` when interacting as a teacher.
